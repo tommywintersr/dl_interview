@@ -33,6 +33,11 @@ trigger NF_AccountTrigger_Example on Account (
 							System.debug('Added Contact: ' + a.Name + '.');
 						}
 
+						//insert list
+						if (contactList.size() > 0) {
+        			insert contactList;
+    				}
+
         }
     }
 }
