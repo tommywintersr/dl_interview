@@ -5,7 +5,7 @@
 		<name>ApexClass</name>
 	</types>
 	<types>
-        <members>NF_ContactTrigger_Example</members>
+        <members>*</members>
         <name>ApexTrigger</name>
     </types>
 	<version>39.0</version>
