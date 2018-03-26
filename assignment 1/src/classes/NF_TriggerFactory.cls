@@ -17,6 +17,7 @@ public without sharing class NF_TriggerFactory {
 
     static{
         TriggerHandlerMap = new Map<Schema.sObjectType, String>();
+        //add Account Trigger handler to map
         TriggerHandlerMap.put(Account.sObjectType, 'NF_AccountTriggerHandler_Sample');
     }
 

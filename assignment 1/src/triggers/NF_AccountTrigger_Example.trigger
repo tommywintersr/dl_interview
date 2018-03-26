@@ -6,7 +6,7 @@
 * @Modification Log	:
 *-------------------------------------------------------------------------------------
 * Ver       Date        Author      Modification
-* 1.0       2017-05-09  Recruiter    Created the file/class
+* 1.0       2018-03-25  Thomas Winter    Created the file/class
 */
 trigger NF_AccountTrigger_Example on Account (
 	before insert,
