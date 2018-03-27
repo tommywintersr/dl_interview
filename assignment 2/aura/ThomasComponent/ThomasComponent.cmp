@@ -1,0 +1,47 @@
+<!--
+Author: Thomas Winter
+Date: March 26, 2018
+Description: Custom Lightning component for Salesforce Dev Org.
+Shows a button, that onClick opens a modal. When clicking within the modal,
+feedback is provided back to the lightning app page.
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <div id="page-div" aria-hidden="false">
+	<lightning:card class="slds-p-around_xx-large">
+        <div class="slds-align_absolute-center slds-p-around_xxx-small" >
+        	<p id="cancel-msg" style="display: none;">You clicked the 'Cancel' button.</p>
+        </div>
+
+        <div class="slds-align_absolute-center slds-p-around_xxx-small">
+        	<p id="confirm-msg" style="display: none;">You clicked the 'Confirm' button.</p>
+        </div>
+
+    	<lightning:button class="slds-align_absolute-center " variant="neutral" label="Click me to know what I am thinking" onclick="{!c.showModal}" />
+
+        <div id="modal-div" class="demo-only" style="display: none;" >
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-hidden="true" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+                <button onclick="{!c.hideModal}" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                  	<lightning:icon iconName="utility:close" variant="close"/>
+
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">My current Mindset</h2>
+                <p class="slds-m-top_x-small">This is my cool assignment.</p>
+              </header>
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <p>I am so excited to learn Lightning</p>
+              </div>
+              <footer class="slds-modal__footer">
+                <button onclick="{!c.cancelModal}" class="slds-button slds-button_neutral">Cancel</button>
+                <button onclick="{!c.confirmModal}" class="slds-button slds-button_brand">Confirm</button>
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+
+    </lightning:card>
+    </div>
+</aura:component>
