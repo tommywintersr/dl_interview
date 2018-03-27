@@ -1,14 +1,14 @@
 /**
-* @File Name:   NF_ContactTriggerHandler_Sample.cls
-* @Description:   
-* @Author:      Recruiter
+* @File Name:   NF_AccountTriggerHandler_Sample.cls
+* @Description: Handles trigger for account creation
+* @Author:      Thomas Winter
 * @Group:       Apex
 * @Modification Log :
 *-------------------------------------------------------------------------------------
 * Ver       Date        Author      Modification
-* 1.0       2017-05-09  Recruiter    Created the file/class
+* 1.0       2018-03-25  Thomas Winter    Created the file/class
 */
-public with sharing class NF_ContactTriggerHandler_Sample extends NF_AbstractTriggerHandler {
+public with sharing class NF_AccountTriggerHandler_Sample extends NF_AbstractTriggerHandler {
 	public override void beforeUpdate(){
 
 	}

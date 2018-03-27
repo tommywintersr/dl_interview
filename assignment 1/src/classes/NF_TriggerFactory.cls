@@ -1,6 +1,6 @@
 /**
 * @File Name:   NF_TriggerFactory.cls
-* @Description:   
+* @Description:
 * @Author:      Recruiter
 * @Group:       Apex
 * @Modification Log :
@@ -17,9 +17,10 @@ public without sharing class NF_TriggerFactory {
 
     static{
         TriggerHandlerMap = new Map<Schema.sObjectType, String>();
-        TriggerHandlerMap.put(Contact.sObjectType, 'NF_ContactTriggerHandler_Sample');
+        //add Account Trigger handler to map
+        TriggerHandlerMap.put(Account.sObjectType, 'NF_AccountTriggerHandler_Sample');
     }
-    
+
     /**
     * @Name          getHandler
     * @Description   Get trigger handler for sObject
@@ -36,8 +37,8 @@ public without sharing class NF_TriggerFactory {
         }
 
         return null;
-    } 
-    
+    }
+
     /**
     * @Name          CreateHandlerAndExecute
     * @Description   Create Trigger handler and execute
@@ -69,7 +70,7 @@ public without sharing class NF_TriggerFactory {
         if(Trigger.isBefore)
         {
             handler.beforeBulk();
-            
+
             if(Trigger.isDelete)
             {
                handler.beforeDelete();
@@ -86,7 +87,7 @@ public without sharing class NF_TriggerFactory {
         else
         {
             handler.afterBulk();
-            
+
             if(Trigger.isDelete)
             {
                handler.afterDelete();
